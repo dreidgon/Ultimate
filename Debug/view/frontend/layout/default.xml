@@ -1,16 +1,9 @@
 <?xml version="1.0"?>
 
-<page layout="3columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-    <body>
-        <referenceBlock name="catalog.topnav">
-            <action method="setTemplate">
-                <argument name="template" xsi:type="string">Magento_Theme::html/topmenu.phtml</argument>
-            </action>
-        </referenceBlock>
-        <referenceBlock name="navigation.sections">
-            <arguments>
-                <argument name="cache_lifetime" xsi:type="number">86400</argument>
-            </arguments>
-        </referenceBlock>
-    </body>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+  <body>
+    <referenceContainer name="after.body.start">
+      <block class="Ultimate\Debug\Block\Debugger" name="debugger" as="debugger" template="topdebugger.phtml"/>
+   </referenceContainer>
+  </body>
 </page>
